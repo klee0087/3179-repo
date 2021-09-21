@@ -4,12 +4,15 @@
     "width": 800,
     "height": 600,
     "data": {
-      "url": "world1.geo.json",
-      "format": {"type": "json"}
+      "url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/homework-week9/world1.geo.json",
+      "format": {
+        "type": "topojson",
+        "feature": "world1.geo"
+      }
     },
     "transform": [
       {
-        "lookup": "properties.NAME",
+        "lookup": "properties.name",
         "from": {
           "data": {
             "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/data/covid_10_10_2020.csv"
@@ -29,7 +32,7 @@
         "scale": {"type": "log"}
       },
       "tooltip": [
-        {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+        {"field": "properties.name", "type": "nominal", "title": "Country"},
         {"field": "Active", "type": "quantitative"}
       ]
     }

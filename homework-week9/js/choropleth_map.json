@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "COVID-19 Active Cases (10 Oct 2020)",
+    "title": "test",
     "width": 800,
     "height": 600,
     "projection": { "type": "equirectangular"},
@@ -12,7 +12,7 @@
           }
     },
     "transform": [{
-        "lookup": "properties.name",
+        "lookup": "properties.sovereignt",
         "from": {
           "data": {
             "url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/homework-week9/data/df_suicide_renamed.csv"
@@ -37,7 +37,7 @@
         }
       },
       "tooltip": [
-        {"field": "properties.name", "type": "nominal", "title": "Country"},
+        {"field": "properties.sovereignt", "type": "nominal", "title": "Country"},
         {"field": "Suicide Rates per 100k population", "type": "quantitative", "format": ".2f"}
       ]
     }

@@ -4,20 +4,19 @@
     "width": 800,
     "height": 600,
     "data": {
-      "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+      "url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/homework-week9/js/world.geo.topo.json",
       "format": {
-            "type": "topojson",
-            "feature": "ne_110m_admin_0_countries"
+            "type": "json"
           }
     },
     "transform": [{
         "lookup": "properties.NAME",
         "from": {
           "data": {
-            "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/data/covid_10_10_2020.csv"
+            "url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/homework-week9/data/suicide-rates-1985-to-2016-dataset.csv"
           },
-          "key": "Country",
-          "fields": ["Active"]
+          "key": "country",
+          "fields": ["suicides/100k pop"]
         }
       },
       {"calculate": "datum.Active + 0.1", "as": "Active Cases"}

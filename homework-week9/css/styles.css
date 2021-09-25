@@ -1,0 +1,18 @@
+#header1 {
+    background-color: lightblue;
+     color: black;
+     padding: 40px;
+     text-align: center;
+     font-family: Arial, Helvetica, sans-serif;
+     font-weight: bold;
+     
+}
+
+#choropleth_map {
+	top: 50px;
+	bottom: 100px; 
+	left: 26%;
+	right: 100px;
+	/*height: 1000px;
+	width: 800px;*/
+}

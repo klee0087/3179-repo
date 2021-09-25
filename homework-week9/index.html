@@ -5,18 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
-    <script src="https://raw.githubusercontent.com/klee0087/3179-repo/main/homework-week9/js/vega_lite_choropleth.js"></script>
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 
     <title>Choropleth Map</title>
 </head>
 
 <body>
-    <h1>Choropleth Map for the suicide dataset</h1>
+    <h1 id="header1">Choropleth Map for the suicide dataset</h1>
     <div id="choropleth_map"></div>
+
+
+    <script type="text/javascript">
+
+        var viz_1 = "js/choropleth_map.json";
+        vegaEmbed('#choropleth_map', viz_1).then(function(result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+      </script>
+
 </body>
 
 </html>

@@ -5,7 +5,7 @@
     "height": 600,
     "projection": { "type": "equirectangular"},
     "data": {
-      "url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/homework-week9/js/ne_110m_admin_0_countries.topojson",
+      "url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/visualisation-project2/js/ne_110m_admin_0_countries.topojson",
       "format": {
             "type": "topojson",
             "feature": "ne_110m_admin_0_countries"
@@ -28,7 +28,7 @@
             "lookup": "properties.NAME_LONG",
             "from": {
             "data": {
-                "url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/homework-week9/data/suicide-rates-1985-to-2016-dataset-cleaned.csv"
+                "url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/visualisation-project2/data/suicide-rates-1985-to-2015-dataset-cleaned.csv"
             },
             "key": "country",
             "fields": ["average_suicides_per_100k_pop"]       
@@ -44,9 +44,7 @@
             "title":"Average suicides per 100k pop",
             "type": "quantitative",
             "scale": {
-                "type": "threshold",
-                "domain": [10, 19, 26, 33, 42],
-                "range": ["#fef0d9", "#fdd49e", "#fdbb84", "#fc8d59", "#ef6548", "#d7301f", "#990000"]
+                "type": "sequential"
             }
         },
         "tooltip": [

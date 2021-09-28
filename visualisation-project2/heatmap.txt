@@ -1,0 +1,10 @@
+"config": {
+        "view": {
+            "strokeWidth": 0,
+            "step": 20,
+            "discreteHeight": 100,
+            "discreteWidth": 800
+        },
+        "axis": {
+            "domain": false
+        }

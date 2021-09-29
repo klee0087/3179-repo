@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Average suicide cases per 100,000 population around the world",
+    "title": "Average Suicide Cases per 100k Population Around The World",
     "width": 800,
     "height": 600,
     "projection": { "type": "equirectangular"},
@@ -31,25 +31,28 @@
                 "url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/visualisation-project2/data/suicide-rates-1985-to-2015-dataset-cleaned.csv"
             },
             "key": "country",
-            "fields": ["average_suicides_per_100k_pop"]       
+            "fields": ["average_suicides_per_100k_pop", "total_suicides"]       
             }
         }
         ],
         "mark": {
         "type": "geoshape"
+        
         },
         "encoding": {
         "color": {
             "field": "average_suicides_per_100k_pop",
-            "title":"Average suicides per 100k pop",
+            "title": null,
             "type": "quantitative",
             "scale": {
-                "type": "sequential"
+                "type": "sequential",
+                "scheme": {"name": "yellowgreenblue"}
             }
         },
         "tooltip": [
             {"field": "properties.NAME_LONG", "type": "nominal", "title": "Country"},
-            {"field": "average_suicides_per_100k_pop", "type": "quantitative", "format": ".2f", "title": "Average Suicides per 100k population"}
+            {"field": "total_suicides", "type": "quantitative", "format": ",", "title": "Total Cases"},
+            {"field": "average_suicides_per_100k_pop", "type": "quantitative", "format": ".2f", "title": "Avg Cases per 100k Population"}
         ]
         }
     }

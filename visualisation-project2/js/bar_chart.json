@@ -1,0 +1,92 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "width": 400,
+    "height": 200,
+    "padding": 5,
+    "data": [
+      {
+        "name": "table",
+        "values": [
+          {"category": "5-14 years", "amount": 52264},
+          {"category": "15-24 years", "amount": 807347},
+          {"category": "25-34 years", "amount": 1121842},
+          {"category": "35-54 years", "amount": 2446375},
+          {"category": "55-74 years", "amount": 1653728},
+          {"category": "75+ years", "amount": 651261}
+        ]
+      }
+    ],
+  
+    "signals": [
+      {
+        "name": "tooltip",
+        "value": {},
+        "on": [
+          {"events": "rect:mouseover", "update": "datum"},
+          {"events": "rect:mouseout",  "update": "{}"}
+        ]
+      }
+    ],
+  
+    "scales": [
+      {
+        "name": "xscale",
+        "type": "band",
+        "domain": {"data": "table", "field": "category"},
+        "range": "width",
+        "padding": 0.08,
+        "round": true
+      },
+      {
+        "name": "yscale",
+        "domain": {"data": "table", "field": "amount"},
+        "domainMax": 4000000,
+        "nice": true,
+        "range": "height"
+      }
+    ],
+  
+    "axes": [
+      { "orient": "bottom", "scale": "xscale", "title": "Age Group"},
+      { "orient": "left", "scale": "yscale", "title": "Suicide Cases"}
+    ],
+    "marks": [
+      {
+        "type": "rect",
+        "from": {"data":"table"},
+        "encode": {
+          "enter": {
+            "x": {"scale": "xscale", "field": "category"},
+            "width": {"scale": "xscale", "band": 1},
+            "y": {"scale": "yscale", "field": "amount"},
+            "y2": {"scale": "yscale", "value": 0}
+          },
+          "update": {
+            "fill": {"value": "steelblue"}
+          },
+          "hover": {
+            "fill": {"value": "red"}
+          }
+        }
+      },
+      {
+        "type": "text",
+        "encode": {
+          "enter": {
+            "align": {"value": "center"},
+            "baseline": {"value": "bottom"},
+            "fill": {"value": "#333"}
+          },
+          "update": {
+            "x": {"scale": "xscale", "signal": "tooltip.category", "band": 0.5},
+            "y": {"scale": "yscale", "signal": "tooltip.amount", "offset": -2},
+            "text": {"signal": "tooltip.amount"},
+            "fillOpacity": [
+              {"test": "datum === tooltip", "value": 0},
+              {"value": 1}
+            ]
+          }
+        }
+      }
+    ]
+  }

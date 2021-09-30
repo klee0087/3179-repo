@@ -1,0 +1,128 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 600,
+    "title": "Suicide Cases per Country (as of 2015)",
+    "data": {
+      "url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/visualisation-project2/data/suicide-rates-1985-to-2015-dataset-cleaned-bubbleplot.csv"
+    },
+    "params": [
+      {
+        "name": "Continent_selection",
+        "bind": {
+          "input": "select",
+          "options": [
+            null,
+            "Americas",
+            "Europe",
+            "Africa",
+            "Asia",
+            "Oceania"
+          ],
+          "labels":[
+            "Show All",
+            "Americas",
+            "Europe",
+            "Africa",
+            "Asia",
+            "Oceania"
+          ],
+          "name": "Continent Selection: "
+        }
+      }
+    ],
+    "transform": [
+      {"filter": "datum.average_gdp_per_capita > 0"},
+      {"filter": "datum.average_suicides_per_100k_pop > 0"},
+      {"filter": "Continent_selection == null || datum.continent == Continent_selection"}
+    
+    ],
+    "encoding": {
+      "x": {
+        "field": "average_gdp_per_capita",
+        "type": "quantitative",
+        "title": "Average GDP per Capita ($)",
+        "axis": {"tickCount": 3},
+        "scale": {"type": "log", "domain": [100, 100000]}
+      },
+      "y": {
+        "field": "total_suicides",
+        "type": "quantitative",
+        "title": "Total Suicides",
+        "axis": {"tickCount": 5},
+        "scale": {"type": "log", "domain": [1, 10000000]}
+      }
+    },
+    "layer": [
+      {
+        "selection": {
+          "continent_highlight": {
+            "type": "multi",
+            "fields": ["continent"],
+            "bind": "legend"
+          }
+        },
+        "mark": "circle",
+        "encoding": {
+          "size": {
+            "field": "population",
+            "type": "quantitative",
+            "aggregate": "max",
+            "scale": {
+              "type": "threshold",
+              "domain": [1000000, 10000000, 50000000, 100000000, 500000000],
+              "range": [10, 50, 150, 200, 300, 400]
+            },
+            "legend": {"format": ".1s"}
+          },
+          "color": {
+            "field": "continent",
+            "type": "nominal",
+            "title": "Continent",
+            "scale": {
+              "domain": [
+                "Americas",
+                "Europe",
+                "Africa",
+                "Asia",
+                "Oceania"
+              ],
+              "range": [ "#e41a1c", "#984ea3", "#ff7f00", "#a6cee3", "#377eb8" ]
+            }
+          },
+          "opacity": {
+            "condition": {"selection": "continent_highlight", "value": 0.6},
+            "value": 0.2
+          },
+          "tooltip": [
+            {"field": "country", "type": "nominal", "title": "Country"},
+            {"field": "population", "type": "quantitative", "format": ",", "title": "Population"},
+            {"field": "total_suicides", "type": "quantitative", "format": ",", "title": "Total Suicides"},
+            {"field": "average_gdp_per_capita", "type": "quantitative", "format": ",", "title": "Avg GDP per Capita"}
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "baseline": "middle",
+          "dx": -12,
+          "fontSize": 11,
+          "fontStyle": "bold"
+        },
+        "encoding": {
+          "text": {"field": "country", "type": "nominal", "title": "Country"},
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {
+              "test": "datum['country'] == 'France' || datum['country'] == 'Thailand' || datum['country'] == 'Ukraine' || datum['country'] == 'Sri Lanka' || datum['country'] == 'Japan' || datum['country'] == 'Brazil' || datum['country'] == 'Philippines' || datum['country'] == 'Australia' || datum['country'] == 'San Marino' || datum['country'] == 'Italy' || datum['country'] == 'Russian Federation' ||  datum['country'] == 'United States'",
+              "value": 1
+            },
+            "value": 0
+          }
+        }
+      }
+      
+    ]
+  }

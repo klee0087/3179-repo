@@ -1,10 +1,10 @@
 #header1 {
     background-color: lightblue;
-     color: black;
-     padding: 40px;
-     text-align: center;
-     font-family: Arial, Helvetica, sans-serif;
-     font-weight: bold;
+    color: black;
+    padding: 40px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
      
 }
 
@@ -15,4 +15,22 @@
 	right: 100px;
 	/*height: 1000px;
 	width: 800px;*/
+}
+
+#header2 {
+    background-color: lightgreen;
+    color: black;
+    padding: 40px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 120px;
+}
+
+#bubble_plot {
+	top: 50px;
+	bottom: 100px; 
+	left: 25%;
+	right: 100px;
+	margin-bottom: 100px;
 }

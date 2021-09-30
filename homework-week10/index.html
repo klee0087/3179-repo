@@ -13,12 +13,14 @@
     <!-- CSS file -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 
-    <title>Choropleth Map</title>
+    <title>Homework Week 10 by Kevin Lee Jun Hong</title>
 </head>
 
 <body>
     <h1 id="header1">Choropleth Map for the suicide dataset</h1>
     <div id="choropleth_map"></div>
+    <h1 id="header2">Bubble Plot for the suicide dataset</h1>
+    <div id="bubble_plot"></div>
 
 
     <script type="text/javascript">
@@ -28,6 +30,15 @@
           // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
       </script>
+
+
+    <script type="text/javascript">
+
+      var viz_2 = "js/bubble_plot.json";
+      vegaEmbed('#bubble_plot', viz_2).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+      }).catch(console.error);
+    </script>
 
 </body>
 

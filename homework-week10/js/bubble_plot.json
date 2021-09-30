@@ -4,7 +4,7 @@
     "height": 600,
     "title": "Suicide Cases per Country (as of 2015)",
     "data": {
-      "url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/visualisation-project2/data/suicide-rates-1985-to-2015-dataset-cleaned-bubbleplot.csv"
+      "url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/homework-week10/data/suicide-rates-1985-to-2015-dataset-cleaned-bubbleplot.csv"
     },
     "params": [
       {

@@ -7,7 +7,9 @@
     "config": {
         "view": {
             "strokeWidth": 0,
-            "step": 20
+            "step": 20,
+            "discreteHeight": 200,
+            "discreteWidth": 1100
         },
         "axis": {
             "domain": false

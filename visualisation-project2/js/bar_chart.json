@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
-    "width": 400,
-    "height": 200,
+    "width": 555,
+    "height": 495,
     "padding": 5,
     "data": [
       {
@@ -40,7 +40,7 @@
       {
         "name": "yscale",
         "domain": {"data": "table", "field": "amount"},
-        "domainMax": 4000000,
+        "domainMax": 2600000,
         "nice": true,
         "range": "height"
       }

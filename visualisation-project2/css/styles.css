@@ -1,0 +1,17 @@
+#choropleth_map {
+	margin-top: 20px;
+}
+
+#heatmap {
+ margin-left: -10px;
+}
+
+#bubble_plot {
+	margin-top: 10px;
+	/* margin-bottom: 20px; */
+}
+
+/* #donut_chart {
+	margin-top: 30px;
+} */
+

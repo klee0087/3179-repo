@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 480,
-    "height": 440,
+    "height": 460,
     
     "data": {
       "url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/visualisation-project2/data/suicide-rates-1985-to-2015-dataset-cleaned-bubbleplot.csv"
@@ -129,7 +129,7 @@
           "color": {"value": "black"},
           "opacity": {
             "condition": {
-              "test": "datum['country'] == 'Lithuania' || datum['country'] == 'Ukraine' || datum['country'] == 'Sri Lanka' || datum['country'] == 'Japan' || datum['country'] == 'Qatar' || datum['country'] == 'Kyrgyzstan' || datum['country'] == 'Russian Federation' ||  datum['country'] == 'United States'",
+              "test": "datum['country'] == 'Lithuania' || datum['country'] == 'Ukraine' || datum['country'] == 'Sri Lanka' || datum['country'] == 'Japan' || datum['country'] == 'Qatar' || datum['country'] == 'Kyrgyzstan' || datum['country'] == 'Russian Federation'",
               "value": 1
             },
             "value": 0

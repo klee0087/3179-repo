@@ -132,7 +132,7 @@
             },
             "theta": {"signal": "(datum['startAngle'] + datum['endAngle'])/2"},
             "fill": {"value": "#000000"},
-            "fontSize": {"value": 20},
+            "fontSize": {"value": 24},
             "fontStyle": {"value": "bold"},
             "align": {"value": "center"},
             "baseline": {"value": "middle"}

@@ -84,7 +84,8 @@
             "fillOpacity": [
               {"test": "datum === tooltip", "value": 0},
               {"value": 1}
-            ]
+            ],
+            "fontSize":{"value": 18}
           }
         }
       }

@@ -1,5 +1,16 @@
+/* #choropleth_map {
+	margin-top: 100px;
+	margin-left: 80px;
+} */
+
+/* #choropleth_map {
+	margin-top: 10px;
+	margin-left: -40px;
+} */
+
 #choropleth_map {
-	margin-top: 20px;
+	margin-top: 10px;
+	margin-left: 10px;
 }
 
 #heatmap {

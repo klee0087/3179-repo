@@ -3,7 +3,7 @@
     "data": {
         "url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/visualisation-project2/data/suicide-rates-1985-to-2015-dataset-cleaned.csv"
     },
-    "title": "Average Suicide Cases per Continent (as of 2015)",
+    "title": "Average Suicide Cases per Continent",
     "config": {
         "view": {
             "strokeWidth": 0,
@@ -43,7 +43,7 @@
         "tooltip":[
             {"field": "year", "type": "ordinal", "timeUnit": "year", "title": "Year"},
             {"field": "continent", "type": "nominal", "title": "Continent"},
-            {"field": "suicides_per_100k_pop", "aggregate": "mean", "format": ".2f", "title": "Avg Cases per 100k Population"}
+            {"field": "suicides_per_100k_pop", "aggregate": "mean", "format": ".2f", "title": "Average Cases per 100k Population"}
         ]
     }
   }

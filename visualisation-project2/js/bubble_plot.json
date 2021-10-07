@@ -102,8 +102,11 @@
               "range": ["#d7191c", "#ff7f00", "#ffff00", "#80ff00", "#2b83ba"]
             }
           },
+          "stroke": {"value": "black"},
+          "strokeWidth": {"value": 0.5},
+          "strokeOpacity": {"value": 1},
           "opacity": {
-            "condition": {"selection": "continent_highlight", "value": 0.6},
+            "condition": {"selection": "continent_highlight", "value": 0.7},
             "value": 0.2
           },
           "tooltip": [

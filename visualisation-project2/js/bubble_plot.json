@@ -113,8 +113,8 @@
             {"field": "country", "type": "nominal", "title": "Country"},
             {"field": "population", "type": "quantitative", "format": ",", "title": "Population"},
             {"field": "total_suicides", "type": "quantitative", "format": ",", "title": "Total Cases"},
-            {"field": "average_suicides_per_100k_pop", "type": "quantitative", "format": ",", "title": "Avg Cases per 100k Population"},
-            {"field": "average_gdp_per_capita", "type": "quantitative", "format": ",", "title": "Avg GDP per Capita"}
+            {"field": "average_suicides_per_100k_pop", "type": "quantitative", "format": ",", "title": "Average Cases per 100k Population"},
+            {"field": "average_gdp_per_capita", "type": "quantitative", "format": ",", "title": "Average GDP per Capita"}
           ]
         }
       },
@@ -124,8 +124,10 @@
           "align": "right",
           "baseline": "middle",
           "dx": -12,
-          "fontSize": 11,
-          "fontStyle": "bold"
+          "dy": -4,
+          "fontSize": 10,
+          "fontStyle": "bold",
+          "font": "Roboto"
         },
         "encoding": {
           "text": {"field": "country", "type": "nominal", "title": "Country"},
@@ -140,5 +142,6 @@
         }
       }
       
-    ]
+    ],
+    "config": {"font": "Roboto"}
   }

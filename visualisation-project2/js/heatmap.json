@@ -13,7 +13,8 @@
         },
         "axis": {
             "domain": false
-        }
+        },
+        "font": "Roboto"
     },
     "mark": "rect",
     "encoding": {
@@ -32,10 +33,10 @@
             "title": "Continent"
         },
         "color": {
-            "field": "suicides_per_100k_pop",
+            "field": "suicide_per_100k_pop_year_continent",
             "aggregate": "mean",
             "type": "quantitative",
-            "scale": {"scheme": {"name": "yellowgreenblue"}},
+            "scale": {"scheme": {"name": "orangered"}},
             "legend": {
                 "title": null
             }
@@ -43,7 +44,7 @@
         "tooltip":[
             {"field": "year", "type": "ordinal", "timeUnit": "year", "title": "Year"},
             {"field": "continent", "type": "nominal", "title": "Continent"},
-            {"field": "suicides_per_100k_pop", "aggregate": "mean", "format": ".2f", "title": "Average Cases per 100k Population"}
+            {"field": "suicide_per_100k_pop_year_continent", "aggregate": "mean", "format": ".2f", "title": "Cases per 100k Population"}
         ]
     }
   }

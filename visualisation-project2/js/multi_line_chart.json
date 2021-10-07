@@ -1,0 +1,14 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Stock prices of 5 Tech Companies over Time.",
+    "data": {"url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/visualisation-project2/data/suicide-rates-1985-to-2015-dataset-cleaned.csv"},
+    "mark": "line",
+    "encoding": {
+      "x": {"field": "year", "type": "ordinal"},
+      "y": {"field": "suicides_no", "type": "quantitative","aggregate": "sum"},
+      "color": {"field": "age", "type": "nominal"},
+      "tooltip": {"field": "suicides_no", "type": "quantitative","aggregate": "sum"}
+    }
+    
+  }
+  

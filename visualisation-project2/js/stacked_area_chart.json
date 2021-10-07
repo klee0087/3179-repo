@@ -1,0 +1,23 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Trend of Suicide Cases (1985 - 2015)",
+    "width": 500, "height": 500,
+    "data": {"url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/visualisation-project2/data/suicide-rates-1985-to-2015-dataset-cleaned.csv"},
+    "mark": "area",
+    "encoding": {
+      "x": {
+        "timeUnit": "year", "field": "year", "title": "Year"
+      },
+      "y": {
+        "aggregate": "sum", "field": "suicides_no", "title": "Suicide Cases"
+      },
+      "color": {
+        "field": "age",
+        "scale": {"scheme": "pastel1"},
+        "legend": {"values": ["5-14 years", "15-24 years", "25-34 years", "35-54 years", "55-74 years", "75+ years"],
+                    "title": "Age Group"}
+        
+      }
+    }
+  }
+  

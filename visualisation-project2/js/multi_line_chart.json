@@ -1,14 +1,72 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Stock prices of 5 Tech Companies over Time.",
+    "title": "Total Suicide Cases Over The Years By Age Group",
+    "width": 475,
+    "height": 440,
     "data": {"url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/visualisation-project2/data/suicide-rates-1985-to-2015-dataset-cleaned.csv"},
-    "mark": "line",
-    "encoding": {
-      "x": {"field": "year", "type": "ordinal"},
-      "y": {"field": "suicides_no", "type": "quantitative","aggregate": "sum"},
-      "color": {"field": "age", "type": "nominal"},
-      "tooltip": {"field": "suicides_no", "type": "quantitative","aggregate": "sum"}
-    }
-    
+    "params": [{
+      "name": "age_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "5-14 years", 
+          "15-24 years",
+          "25-34 years", 
+          "35-54 years", 
+          "55-74 years", 
+          "75+ years"
+        ],
+        "labels": [
+          "Show All",
+          "5-14 years", 
+          "15-24 years",
+          "25-34 years", 
+          "35-54 years", 
+          "55-74 years", 
+          "75+ years"
+        ],
+        "name": "Age Group Selection: "
+      }
+    } 
+  ],
+  "transform": [
+    {"filter" : "age_selection == null || datum.age == age_selection"}
+  ],
+    "layer": [
+      {
+        "selection": {
+          "line_highlight": {
+            "type": "multi",
+            "fields": ["age"],
+            "bind": "legend"
+          }
+        },
+
+        "mark": {
+          "type": "line",
+          "point": true
+        },
+        "encoding": {
+          "x": {"field": "year", "type": "ordinal", "title": "Year"},
+          "y": {"field": "suicides_no", "type": "quantitative","aggregate": "sum", "title": "Suicide Cases"},
+          "color": {"field": "age", 
+                    "type": "nominal",
+                    "legend": {"values": ["5-14 years", "15-24 years", "25-34 years", "35-54 years", "55-74 years", "75+ years"],
+                    "title": "Age Group"}
+                  },
+          "opacity": {
+            "condition": {"selection": "line_highlight", "value": 1},
+            "value": 0.2
+                  },
+          "tooltip": [
+            {"field": "year", "type": "ordinal", "title": "Year"},
+            {"field": "age", "type": "nominal", "title": "Age Group"},
+            {"field": "suicides_no", "type": "quantitative","aggregate": "sum", "title": "Suicide Cases", "format": ","}
+            ]
+        }
+      }  
+    ],
+    "config": {"font": "Roboto"}    
   }
   

@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Suicide Cases Per 100k Population Around The World (1985 - 2015)",
   "width": 565,
-  "height": 430,
+  "height": 435,
   "projection": {
     "type": "equalEarth",
     "center": {"expr": "center_to"},

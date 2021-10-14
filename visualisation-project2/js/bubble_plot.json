@@ -106,7 +106,7 @@
           "strokeWidth": {"value": 0.5},
           "strokeOpacity": {"value": 1},
           "opacity": {
-            "condition": {"selection": "continent_highlight", "value": 0.7},
+            "condition": {"selection": "continent_highlight", "value": 0.6},
             "value": 0.2
           },
           "tooltip": [
@@ -124,8 +124,8 @@
           "align": "right",
           "baseline": "middle",
           "dx": -12,
-          "dy": -4,
-          "fontSize": 10,
+          "dy": -2,
+          "fontSize": 11,
           "fontStyle": "bold",
           "font": "Roboto"
         },

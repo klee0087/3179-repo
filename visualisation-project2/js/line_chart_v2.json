@@ -1,0 +1,190 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/visualisation-project2/data/suicide-rates-1985-to-2015-dataset-cleaned.csv"
+  },
+  "width": 480,
+  "height": 480,
+  "title": "Total Suicide Cases Over The Years By Age Group",
+  "params": [
+    {
+      "name": "age_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "5-14 years",
+          "15-24 years",
+          "25-34 years",
+          "35-54 years",
+          "55-74 years",
+          "75+ years"
+        ],
+        "labels": [
+          "Show All",
+          "5-14 years",
+          "15-24 years",
+          "25-34 years",
+          "35-54 years",
+          "55-74 years",
+          "75+ years"
+        ],
+        "name": "Age Group Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "age_selection == null || datum.age == age_selection"}
+  ],
+  "layer": [
+    {
+      "selection": {
+        "index": {
+          "type": "single",
+          "on": "mouseover",
+          "encodings": ["x"],
+          "nearest": true,
+          "init": {"x": {"year": 2011}}
+        }
+      },
+      "mark": "point",
+      "encoding": {
+        "x": {"field": "year", "type": "temporal", "axis": null, "title": "Year"},
+        "opacity": {"value": 0}
+      }
+    },
+    {
+      "transform": [
+        {
+          "lookup": "age",
+          "from": {"selection": "index", "key": "age"}
+        }
+      ],
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal",
+          "title": "Year",
+          "axis": null
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "suicides_no",
+          "type": "quantitative",
+          "title": "Number of Suicide Cases",
+          "scale": {"domain": [0, 100000]}
+        },
+        "color": {
+          "field": "age",
+          "type": "nominal",
+          "scale": {
+            "scheme": "category10"
+          },
+          "sort": "-y",
+          "legend": {
+            "orient": "right",
+            "labelFontSize": 12,
+            "offset": 8,
+            "symbolStrokeWidth": 3,
+            "title": "Age Group",
+            "values": [
+              "5-14 years",
+              "15-24 years",
+              "25-34 years",
+              "35-54 years",
+              "55-74 years",
+              "75+ years"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "transform": [{"filter": {"selection": "index"}}],
+      "encoding": {
+        "x": {"field": "year", "type": "temporal", "axis": null},
+        "color": {"value": "black"}
+      },
+      "layer": [
+
+        {"mark": {"type": "rule", "strokeWidth": 0.5}},
+        {
+          "mark": {"type": "circle", "stroke": "white", "strokeWidth": 3},
+          "encoding": {
+            "x": {"field": "year", "type": "temporal", "axis": null},
+            "y": {
+              "aggregate": "sum",
+              "field": "suicides_no",
+              "type": "quantitative"
+            },
+            "key": {"field": "age"}
+          }
+        },
+        {
+          "mark": {"type": "circle"},
+          "encoding": {
+            "x": {"field": "year", "type": "temporal", "axis": null},
+            "y": {
+              "aggregate": "sum",
+              "field": "suicides_no",
+              "type": "quantitative"
+            },
+            "key": {"field": "age"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "dx": -10,
+            "dy": 0,
+            "stroke": "white",
+            "strokeWidth": 4
+          },
+          "encoding": {
+            "x": {"field": "year", "type": "temporal", "axis": null},
+            "y": {
+              "aggregate": "sum",
+              "field": "suicides_no",
+              "type": "quantitative"
+            },
+            "key": {"field": "age"},
+            "text": {
+              "aggregate": "sum",
+              "field": "suicides_no",
+              "type": "quantitative",
+              "format": ","
+            }
+          }
+        },
+        {
+          "mark": {"type": "text", "align": "right", "dx": -10, "dy": 0},
+          "encoding": {
+            "x": {"field": "year", "type": "temporal", "axis": null},
+            "y": {
+              "aggregate": "sum",
+              "field": "suicides_no",
+              "type": "quantitative"
+            },
+            "key": {"field": "age"},
+            "text": {
+              "aggregate": "sum",
+              "field": "suicides_no",
+              "type": "quantitative",
+              "format": ","
+            }
+          }
+        },
+        {
+          "mark": {"type": "text", "align": "center", "opacity": 0.01, "fontSize": 11},
+          "encoding": {
+            "text": {"field": "year", "timeUnit": "year"},
+            "y": {"value": 487}
+          }
+        }
+      ]
+    }
+  ],
+  "config": {"font": "Roboto"}
+}

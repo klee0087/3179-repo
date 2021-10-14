@@ -4,6 +4,48 @@
         "url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/visualisation-project2/data/suicide-rates-1985-to-2015-dataset-cleaned.csv"
     },
     "title": "Average Suicide Cases per Continent",
+    "layer": [{
+        "mark": "rect",
+        "encoding": {
+            "x": {
+                "field": "year",
+                "type": "ordinal",
+                "timeUnit": "year",
+                "title": "Year",
+                "axis": {
+                    "labelAngle": 270
+                }
+            },
+            "y": {
+                "field": "continent",
+                "type": "nominal",
+                "title": "Continent"
+            },
+            "color": {
+                "field": "suicide_per_100k_pop_year_continent",
+                "aggregate": "mean",
+                "type": "quantitative",
+                "scale": {"scheme": {"name": "orangered"}},
+                "legend": {
+                    "title": null
+                }
+            },
+            "tooltip":[
+                {"field": "year", "type": "ordinal", "timeUnit": "year", "title": "Year"},
+                {"field": "continent", "type": "nominal", "title": "Continent"},
+                {"field": "suicide_per_100k_pop_year_continent", "aggregate": "mean", "format": ".2f", "title": "Cases per 100k Population"}
+                    ]
+                }
+            },
+            {
+        "mark": {"type": "text", "align": "center", "dx": 150, "fontSize": 15, "font": "Roboto", "opacity": 0.01},
+        "encoding": {
+            "y": {"datum": "Africa",
+                "type": "nominal"},
+            "text": {"value": "Africa does not show the right trend due to insufficent data"}
+                    }
+                }
+            ],
     "config": {
         "view": {
             "strokeWidth": 0,
@@ -15,36 +57,6 @@
             "domain": false
         },
         "font": "Roboto"
-    },
-    "mark": "rect",
-    "encoding": {
-        "x": {
-            "field": "year",
-            "type": "ordinal",
-            "timeUnit": "year",
-            "title": "Year",
-            "axis": {
-                "labelAngle": 270
-            }
-        },
-        "y": {
-            "field": "continent",
-            "type": "nominal",
-            "title": "Continent"
-        },
-        "color": {
-            "field": "suicide_per_100k_pop_year_continent",
-            "aggregate": "mean",
-            "type": "quantitative",
-            "scale": {"scheme": {"name": "orangered"}},
-            "legend": {
-                "title": null
-            }
-        },
-        "tooltip":[
-            {"field": "year", "type": "ordinal", "timeUnit": "year", "title": "Year"},
-            {"field": "continent", "type": "nominal", "title": "Continent"},
-            {"field": "suicide_per_100k_pop_year_continent", "aggregate": "mean", "format": ".2f", "title": "Cases per 100k Population"}
-        ]
     }
+    
   }

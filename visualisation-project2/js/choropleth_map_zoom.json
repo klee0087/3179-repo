@@ -72,6 +72,12 @@
       "encoding": {"tooltip": {"field": "note"}}
     },
     {
+    "params": [
+      {
+          "name": "pts",
+          "select": { "type": "point", "on": "mouseover" }
+      }
+    ],
       "data": {
         "url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/visualisation-project2/data/suicide-rates-1985-to-2015-dataset-cleaned.csv"
       },
@@ -101,6 +107,26 @@
           "scale": {"type": "sequential", "scheme": "orangered", "domain": [0, 50]},
           "legend": {"title": null}
         },
+        "stroke": {
+            "condition": {
+                "param": "pts",
+                "empty": false,
+                "value": "black"
+            },
+            "value": "white"
+        },
+        "strokeWidth": {
+            "condition": {
+                "param": "pts",
+                "empty": false,
+                "value": 2
+            },
+            "value": 1
+        },
+        "opacity": {
+            "condition": { "param": "pts", "value": 1 },
+            "value": 0.9
+        },
         "tooltip": [
           {"field": "year", "type": "ordinal", "title": "Year"},
           {"field": "country", "type": "nominal", "title": "Country"},
@@ -112,7 +138,37 @@
           }
         ]
       }
-    }
+    },
+    {
+      "data": {
+          "url": "data/country_mark_coords.csv"
+      },
+      "encoding": {
+          "longitude": {
+              "field": "lng",
+              "type": "quantitative"
+          },
+          "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+          }
+      },
+      "layer": [{
+          "mark": {
+              "type": "circle",
+              "color": "black"
+          }
+      }, {
+          "mark": {
+              "type": "text",
+              "dy": -10,
+              "color": "blue"
+          },
+          "encoding": {
+              "text": { "field": "country", "type": "nominal"}
+          }
+      }]
+  }
   ],
   "config": {"font": "Roboto"}
 }

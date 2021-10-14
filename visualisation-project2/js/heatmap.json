@@ -38,11 +38,11 @@
                 }
             },
             {
-        "mark": {"type": "text", "align": "center", "dx": 150, "fontSize": 15, "font": "Roboto", "opacity": 0.01},
+        "mark": {"type": "text", "align": "center", "dx": 195, "fontSize": 15, "font": "Roboto", "opacity": 0.01},
         "encoding": {
             "y": {"datum": "Africa",
                 "type": "nominal"},
-            "text": {"value": "Africa does not show the right trend due to insufficent data"}
+            "text": {"value": "Africa does not show the right trend due to insufficent data for the later years"}
                     }
                 }
             ],

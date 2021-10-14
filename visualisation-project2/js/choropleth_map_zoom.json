@@ -4,7 +4,7 @@
   "width": 565,
   "height": 435,
   "projection": {
-    "type": "equalEarth",
+    "type": "equirectangular",
     "center": {"expr": "center_to"},
     "scale": {"expr": "zoom_level"}
   },
@@ -22,7 +22,7 @@
     },
     {
       "name": "zoom_level",
-      "value": 125,
+      "value": 100,
       "bind": {
         "input": "range",
         "min": 100,
@@ -67,7 +67,7 @@
         "type": "geoshape",
         "fill": "lightgray",
         "stroke": "white",
-        "strokeWidth": 1
+        "strokeWidth": 0.1
       },
       "encoding": {"tooltip": {"field": "note"}}
     },
@@ -98,7 +98,7 @@
         },
         {"filter": "datum.year == Year_selection"}
       ],
-      "mark": {"type": "geoshape", "stroke": "#fff", "strokeWidth": 0.5},
+      "mark": {"type": "geoshape", "stroke": "#fff"},
       "encoding": {
         "shape": {"field": "geo", "type": "geojson"},
         "color": {
@@ -121,7 +121,7 @@
                 "empty": false,
                 "value": 2
             },
-            "value": 1
+            "value": 0.1
         },
         "opacity": {
             "condition": { "param": "pts", "value": 1 },
@@ -162,7 +162,7 @@
           "mark": {
               "type": "text",
               "dy": -10,
-              "color": "blue"
+              "color": "black"
           },
           "encoding": {
               "text": { "field": "country", "type": "nominal"}

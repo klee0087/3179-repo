@@ -9,8 +9,9 @@
 } */
 
 #choropleth_map {
-	margin-top: -1px;
+	margin-top: 5px;
 	margin-left: 22px;
+	margin-bottom: 10px;
 }
 
 #heatmap {

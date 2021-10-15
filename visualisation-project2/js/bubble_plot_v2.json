@@ -1,0 +1,162 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 480,
+    "height": 460,
+    
+    "data": {
+      "url": "https://raw.githubusercontent.com/klee0087/3179-repo/main/visualisation-project2/data/suicide-rates-1985-to-2015-dataset-cleaned.csv"
+    },
+    "params": [
+      {
+          "name": "Year_selection",
+          "value": 1996,
+          "bind": {
+            "input": "range",
+            "min": 1985,
+            "max": 2015,
+            "step": 1,
+            "name": "Year:  "
+          }
+        },      
+      {
+        "name": "Population_Above",
+        "value": 0,
+        "bind": {
+          "input": "range",
+          "min": 0,
+          "max": 100000000,
+          "step": 1000000,
+          "name": "Minimum Population: "
+        }
+      },
+      {
+        "name": "Continent_selection",
+        "bind": {
+          "input": "select",
+          "options": [
+            null,
+            "Americas",
+            "Europe",
+            "Africa",
+            "Asia",
+            "Oceania"
+          ],
+          "labels":[
+            "Show All",
+            "Americas",
+            "Europe",
+            "Africa",
+            "Asia",
+            "Oceania"
+          ],
+          "name": "Continent Selection: "
+        }
+      }
+    ],
+    "transform": [
+      {"filter": "datum.gdp_per_capita > 0"},
+      {"filter": "datum.suicide_per_100k_pop_year_country >= 0.1"},
+      {"filter": "datum.population > Population_Above"},
+      {"filter": "Continent_selection == null || datum.continent == Continent_selection"},
+      {"filter": "datum.year == Year_selection"}
+    
+    ],
+    "encoding": {
+      "x": {
+        "field": "gdp_per_capita",
+        "aggregate": "mean",
+        "type": "quantitative",
+        "title": "GDP per Capita ($)",
+        "axis": {"tickCount": 4},
+        "scale": {"type": "log", "domain": [100, 1000000]}
+      },
+      "y": {
+        "field": "suicide_per_100k_pop_year_country",
+        "aggregate": "mean",
+        "type": "quantitative",
+        "title": "Suicide Cases per 100k Population",
+        "axis": {"tickCount": 5},
+        "scale": {"type": "log", "domain": [0.01, 1000]}
+      }
+    },
+    "layer": [
+      {
+        "selection": {
+          "continent_highlight": {
+            "type": "multi",
+            "fields": ["continent"],
+            "bind": "legend"
+          }
+        },
+        "mark": "circle",
+        "encoding": {
+          "size": {
+            "field": "population_per_year",
+            "aggregate": "mean",
+            "type": "quantitative",
+            "title": "Population",
+            "scale": {
+              "type": "threshold",
+              "domain": [1000000, 10000000, 50000000, 100000000, 500000000],
+              "range": [50, 100, 150, 250, 400, 500]
+            },
+            "legend": {"format": ".1s"}
+          },
+          "color": {
+            "field": "continent",
+            "type": "nominal",
+            "title": "Continent",
+            "scale": {
+              "domain": [
+                "Americas",
+                "Europe",
+                "Africa",
+                "Asia",
+                "Oceania"
+              ],
+              "range": ["#d7191c", "#ff7f00", "#ffff00", "#80ff00", "#2b83ba"]
+            }
+          },
+          "stroke": {"value": "black"},
+          "strokeWidth": {"value": 0.5},
+          "strokeOpacity": {"value": 1},
+          "opacity": {
+            "condition": {"selection": "continent_highlight", "value": 0.6},
+            "value": 0.2
+          },
+          "tooltip": [
+            {"field": "country", "type": "nominal", "title": "Country"},
+            {"field": "population_per_year", "type": "quantitative", "format": ",", "title": "Population"},
+            {"field": "total_suicides", "type": "quantitative", "format": ",", "title": "Total Cases"},
+            {"field": "suicide_per_100k_pop_year_country", "type": "quantitative", "format": ",", "title": "Cases per 100k Population"},
+            {"field": "gdp_per_capita", "type": "quantitative", "format": ",", "title": "GDP per Capita"}
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "baseline": "middle",
+          "dx": -12,
+          "dy": -2,
+          "fontSize": 11,
+          "fontStyle": "bold",
+          "font": "Roboto"
+        },
+        "encoding": {
+          "text": {"field": "country", "type": "nominal", "title": "Country"},
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {
+              "test": "datum['country'] == 'Lithuania' || datum['country'] == 'Ukraine' || datum['country'] == 'Sri Lanka' || datum['country'] == 'Japan' || datum['country'] == 'Qatar' || datum['country'] == 'Kyrgyzstan' || datum['country'] == 'Russian Federation'",
+              "value": 1
+            },
+            "value": 0
+          }
+        }
+      }
+      
+    ],
+    "config": {"font": "Roboto"}
+  }

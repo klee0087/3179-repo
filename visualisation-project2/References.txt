@@ -1,0 +1,71 @@
+References
+Rusty. (2016). Suicide Rates Overview 1985 to 2016. Retrieved from 
+	https://www.kaggle.com/russellyates88/suicide-rates-overview-1985-to-2016
+
+Gokhale, C. (2018). country to continent. Retrieved from 
+	https://www.kaggle.com/statchaitya/country-to-continent
+
+Vega-Lite. (2021). Choropleth of Unemployment Rate per County. Retrieved from 
+	https://vega.github.io/vega-lite/examples/geo_choropleth.html
+
+Vega-Lite. (2021). Annual Weather Heatmap. Retrieved from 
+	https://vega.github.io/vega-lite/examples/rect_heatmap_weather.html
+
+Vega-Lite. (2016). Bubble Plot (Gapminder). Retrieved from 
+	https://vega.github.io/vega-lite/examples/circle_bubble_health_income.html
+
+Vega. (2021). Bar Chart Example. Retrieved from 
+	https://vega.github.io/vega/examples/bar-chart/
+
+‌Andriambahoaka, R. (2018). Vega Donut Chart with Label. Retrieved from 
+	https://gist.github.com/rina-andria/6142424f3676233bfb7a9d1067b97b35
+
+Lewitzka, U., Denzin, S., Sauer, C., Bauer, M., & Jabs, B. (2016). Personality differences in early versus late suicide attempters. 
+	BMC Psychiatry, 16(1). https://doi.org/10.1186/s12888-016-0991-6
+
+verywellmind. (2015). Why Do People Commit Suicide? Retrieved from 
+	https://www.verywellmind.com/why-do-people-commit-suicide-1067515
+
+Wikipedia Contributors. (2021). Suicide in Russia. Retrieved from 
+	https://en.wikipedia.org/wiki/Suicide_in_Russia
+
+Wikipedia Contributors. (2021). List of countries by suicide rate. Retrieved from 	
+	https://en.wikipedia.org/wiki/List_of_countries_by_suicide_rate#cite_note-WHO2015_Crude-12
+
+Euronews. (2017). Suicide rate is highest in Europe: UN health agency report. Retrieved from 
+	https://www.euronews.com/2017/05/18/suicide-rate-is-highest-in-europe-un-health-agency-report
+
+‌Eurostat. (2018). Just over 56 000 persons in the EU committed suicide. Retrieved from
+	 https://ec.europa.eu/eurostat/web/products-eurostat-news/-/DDN-20180716-1
+
+Varnik, A., Kolves, K., van der Feltz-Cornelis, C. M., Marusic, A., Oskarsson, H., Palmer, A., … Hegerl, U. (2008). Suicide methods in Europe: 
+	a gender-specific analysis of countries participating in the “European Alliance Against Depression.” 62(6), 545–551. 			https://doi.org/10.1136/jech.2007.065391
+
+‌Weir, K. (2019). Worrying trends in U.S. suicide rates. Retrieved from 
+	https://www.apa.org/monitor/2019/03/trends-suicide
+
+‌World Health Organization: WHO. (2021). Suicide. Retrieved from 
+	https://www.who.int/news-room/fact-sheets/detail/suicide
+
+‌Asmonaitis, K. (2017). This Country Has Among the Highest Suicide Rates in the World. Retrieved from 			https://theculturetrip.com/europe/lithuania/articles/this-country-has-among-the-highest-suicide-rates-in-the-world/
+
+Schumacher, H. (2019). Why more men than women die by suicide. Retrieved from 
+	https://www.bbc.com/future/article/20190313-why-more-men-kill-themselves-than-women
+
+‌Freeman, D., & Freeman, J. (2015). Why are men more likely than women to take their own lives? Retrieved from 			https://www.theguardian.com/science/2015/jan/21/suicide-gender-men-women-mental-health-nick-clegg
+
+‌Suicide Prevention Resource Center. (2019). Adults Ages 26 to 55 Years. Retrieved from 
+	https://www.sprc.org/populations/adults-26-55
+
+Suicide Prevention Resource Center. (2014). Older Adults. Retrieved from 
+	https://www.sprc.org/populations/older-adults
+
+Bibliography
+Li, K. (2021). Dealing with missing countries [ED Discussion]. Retrieved from 
+	https://edstem.org/au/courses/6022/discussion/604708
+
+Charlotte Muth, L. (2021). An alternative to pink & blue: Colors for gender data. Retrieved from
+	 https://blog.datawrapper.de/gendercolor/
+
+Brewer, C., Harrower, M., & The Pennsylvania State University. (2021). ColorBrewer: Color Advice for Maps. Retrieved from 	https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3
+‌

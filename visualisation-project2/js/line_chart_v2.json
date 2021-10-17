@@ -180,7 +180,7 @@
           "mark": {"type": "text", "align": "center", "opacity": 0.01, "fontSize": 11},
           "encoding": {
             "text": {"field": "year", "timeUnit": "year"},
-            "y": {"value": 487}
+            "y": {"value": 486}
           }
         }
       ]
